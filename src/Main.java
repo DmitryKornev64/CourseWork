@@ -13,8 +13,6 @@ public class Main {
         employees[8] = new Employee("Blade Viktor Stalonovich ", 3, 25500);
         employees[9] = new Employee("Stalin Joseph Vissarionovich ", 5, 30080);
 
-
-        /*для проверки*/
         printAllEmployeesInfo();
         getMinSalary();
         getMaxSalary();
@@ -26,9 +24,10 @@ public class Main {
 
     /*список со всеми сотрудниками со всеми данными в консоль toString()*/
     public static void printAllEmployeesInfo() {
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null)
+        for (int i = 0; i < employees.length; i++){
+            if(employees[i] != null) {
                 System.out.println(employees[i].toString());
+            }
         }
     }
 
@@ -36,54 +35,58 @@ public class Main {
     public static void printSum() {
         int sum = 0;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null){
+            if(employees[i] != null) {
                 sum = sum + employees[i].getSalary();
             }
         }
         System.out.println("Cумма зп " + sum);
     }
-    /*поиск сотрулника с минимальной зп*/
+
+    /*поиск сотрудник с минимальной зп*/
     public static int getMinSalary() {
         int min = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
-            if ( employees[i] != null && employees[i].getSalary() < min) {
-                System.out.println("Сотрудник с минимальной зп " + min);
+            if (employees[i] != null && employees[i].getSalary() < min) {
                 min = employees[i].getSalary();
             }
         }
+        System.out.println("Сотрудник с минимальной зп " + min);
         return min;
     }
 
-    /*поиск сотрудника с максимальной зп*/
+    /*поиск сотрудник с максимальной зп*/
     public static int getMaxSalary() {
         int max = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null && employees[i].getSalary() > max) {
                 max = employees[i].getSalary();
-                System.out.println("Сотрудник с максимальной зп " + max);
             }
         }
+        System.out.println("Сотрудник с максимальной зп " + max);
         return max;
     }
 
     /*среднее значение зп*/
-    public static int getSumSalary() {
+    public static int getSumSalary(){
         int sum = 0;
-        for (int i = 0; i < employees.length; i++) {
-            if(employees[i] != null)
+        for (int i = 0; i < employees.length; i++){
+            if(employees[i] != null) {
                 sum = sum + employees[i].getSalary();
+            }
         }
         return sum;
     }
+
     public static void getAvgSalary() {
-        System.out.println("Среднее значение зп " + getSumSalary()/employees.length);
+        System.out.println("среднее значение зарплат " + getSumSalary() / employees.length);
     }
 
     /*фио всех сотрудников в консоль*/
     public static void printEmployeesNames() {
-        for (int i = 0; i < employees.length; i++) {
-            if(employees[i] != null)
+        for (int i = 0; i < employees.length; i++){
+            if (employees[i] != null) {
                 System.out.println(employees[i].getName());
+            }
         }
     }
 }
